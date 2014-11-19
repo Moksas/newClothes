@@ -15,6 +15,15 @@
 	<script src="js/jquery.modal.min.js"></script>
 	<script>
 docReady( function() {
+  $('#left a').click(function(){
+ 	 $('#loginform').modal({
+ 	         fadeDuration: 250,
+ 	   	      fadeDelay: 1.5
+ 	 });
+	 return false;
+  });
+});
+jQuery(window).load(function(){
 	$(".item").each(function(){
 		var H = $(this).height();
 //		var H = $(this).find("img").height();
@@ -23,13 +32,6 @@ docReady( function() {
   var container = document.querySelector('#container');
   var msnry = new Masonry( container, {
     columnWidth: 350
-  });
-  $('#left a').click(function(){
- 	 $('#loginform').modal({
- 	         fadeDuration: 250,
- 	   	      fadeDelay: 1.5
- 	 });
-	 return false;
   });
 });
 	</script>
