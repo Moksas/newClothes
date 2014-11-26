@@ -51,7 +51,19 @@ jQuery(window).load(function(){
 			      polo衫<br>
 			      針織衫<br>
 			      襯衫<br>
-
+			</div>
+			 <li id="coatheader" >外套</li>
+                         <div id="coat">
+                              風衣<br>
+                              夾克<br>
+                            
+			</div>
+			 <li id="underclothesheader" >下半身</li>
+                         <div id="underclothes">
+                              牛仔褲<br>
+                              休閒長褲<br>
+                              休閒短褲<br>
+			</div>
 		</ul>
 	</div>
 	<div id="container">
