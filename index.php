@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/jquery.modal.min.js"></script>
+	<script src="js/foldtoggle.js"></script>
 	<script>
 docReady( function() {
   $('#left a').click(function(){
@@ -44,7 +45,13 @@ jQuery(window).load(function(){
 <body>
 	<div id="left">
 		<ul>
-			<li><a href="#loginform" rel="modal:open">上衣</a></li>
+			<li><a href="#loginform" rel="modal:open">Login</a></li>
+			 <li id="topclothesheader" >上衣</li>
+			 <div id="topclothes">
+			      polo衫<br>
+			      針織衫<br>
+			      襯衫<br>
+
 		</ul>
 	</div>
 	<div id="container">
