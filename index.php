@@ -16,7 +16,7 @@
 	<script src="js/foldtoggle.js"></script>
 	<script>
 docReady( function() {
-  $('#left a').click(function(){
+  $('#Loginbutton').click(function(){
  	 $('#loginform').modal({
  	         fadeDuration: 250,
  	   	      fadeDelay: 1.5
@@ -45,8 +45,8 @@ jQuery(window).load(function(){
 <body>
 	<div id="left">
 		<ul>
-			<li><a href="#loginform" rel="modal:open">Login</a></li>
-			 <li id="topclothesheader" >上衣</li>
+			<li><a id="Loginbutton"  href="#loginform" rel="modal:open">Login</a></li>
+			 <li id="topclothesheader" ><a  >上衣</a></li>
 			 <div id="topclothes">
 			      polo衫<br>
 			      針織衫<br>
