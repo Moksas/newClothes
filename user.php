@@ -14,8 +14,16 @@
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
-	<script src="js/login.js"></script>
 	<script>
+docReady( function() {
+  $('#Loginbutton').click(function(){
+ 	 $('#loginform').modal({
+ 	         fadeDuration: 250,
+ 	   	      fadeDelay: 1.5
+ 	 });
+	 return false;
+  });
+});
 jQuery(window).load(function(){
 	$(".item").each(function(){
 		var H = $(this).height();
@@ -37,48 +45,27 @@ test header
 
 <body>
 	<div id="left">
+<?php
+	session_start();
+	if(!(isset($_SESSION['id']) && !empty($_SESSION['id']))){
+		echo "<script>location.replace('./');</script>";
+		return;
+	}
+	require_once("db_const.php");
+	$sql="SELECT `name` FROM `user` WHERE `id`=".$_SESSION['id'];
+	$result=$mysqli->query($sql);
+	$row=$result->fetch_array();
+	echo "<h1>Hello ".$row['name']."~</h1>";
+?>
 		<ul>
-			<li><a id="Loginbutton"  href="#loginform" rel="modal:open" onClick="loginOpen();">Login</a></li>
-			 <li id="topclothesheader" ><a>上衣</a></li>
-			 <div id="topclothes">
-			      <a href="./index.php?key=針織衫">針織衫</a><br/>
-			      <a href="./index.php?key=襯衫">襯衫</a><br/>
-			</div>
-			 <li id="coatheader" ><a>外套</a></li>
-                         <div id="coat">
-                              <a href="./index.php?key=風衣">風衣</a><br/>
-                              <a href="./index.php?key=夾克">夾克</a><br/>
-                            
-			</div>
-			 <li id="underclothesheader" ><a>下半身</a></li>
-                         <div id="underclothes">
-                              <a href="./index.php?key=牛仔褲">牛仔褲</a><br/>
-                              <a href="./index.php?key=休閒褲">休閒褲</a><br/>
-                              <a href="./index.php?key=休閒鞋">休閒鞋</a><br/>
-                              <a href="./index.php?key=運動鞋">運動鞋</a><br/>
-                              <a href="./index.php?key=皮鞋">皮鞋</a><br/>
-			</div>
+			<li><a id="Loginbutton"  href="#Uploadform" rel="modal:open">Upload</a></li>
+			<li><a href="#Settingform" rel="modal:open">Setting</a></li>
+			<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</div>
 	<div id="container">
 <?php
-	session_start();
-	if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
-		echo "<script>location.replace('user.php');</script>";
-		return;
-	}
-	require_once("db_const.php");
-	$keyWord = htmlspecialchars($_GET['key']);
-	$location = $_GET['loc'];
-	$sql="SELECT `pictures`.*, `user`.name FROM `pictures`,`user` where `pictures`.userid=`user`.id ";
-	if(!$keyWord) ;
-	else if($location=="1")
-		$sql.="AND `pictures`.`top` LIKE '%".$keyWord."%'";
-	else if($location=="2")
-		$sql.="AND `pictures`.`down` LIKE '%".$keyWord."%'";
-	else
-		$sql.="AND (`pictures`.`top` LIKE '%".$keyWord."%' OR `pictures`.`down` LIKE '%".$keyWord."%')";
-	$sql.=" order by `pictures`.id DESC";
+	$sql="SELECT * FROM `pictures` where `userid`=".$_SESSION['id']." order by `id` DESC";
 		
 	$result=$mysqli->query($sql);
 
@@ -105,7 +92,7 @@ test header
 			$tok = strtok(";");
 		}
 		echo '</ul>';
-		echo '<div style="color:#463837;text-align:left;padding:0 0 10px 30px;">Upload from: '.$rows['name'].'</div>';
+		echo '<div style="color:#463837;text-align:left;padding:0 0 10px 30px;">Upload from: '.$row['name'].'</div>';
 		echo '</div>';
 		echo '</div>';
 		++$i;
@@ -113,28 +100,22 @@ test header
 	}
 ?>
 	</div>
-	<div id="loginform" class="modal" action="user.php" method="post">
+	<div id="Settingform" class="modal" action="user.php" method="post">
 		<div id="facebook">
 			<i class="fa fa-facebook"></i>
 			<div id="connect">Connect with Facebook</div>
 		</div>
 		<div id="mainlogin">
 			<div id="or">or</div>
-			<h1>Login to Upload your clothes</h1>
+			<h1>Change name~</h1>
 			<form action="#">
-				<input type="text" id="text" placeholder="your id" value="" required>
-				<input type="password" id="password" placeholder="password" value="" required>
-				<span id="formHide" style="display:none">
-					<input type="password" id="password2" placeholder="password again" value="">
-					<input type="text" id="name" placeholder="name" value="">
-				
-				</span>
-				<button type="submit" onClick="userSubmit();"><i class="fa fa-arrow-right"></i></button>
+				<button type="submit"><i class="fa fa-arrow-right"></i></button>
 			</form>
-			<div id="note">
-				<a href="#">new user?</a>
+<!--			<div id="note">
+				<a href="#">Forgot your password?</a>
 			</div>
-
+-->
 		</div>
 	</div>
 </body>
+
