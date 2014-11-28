@@ -113,7 +113,7 @@ test header
 	}
 ?>
 	</div>
-	<div id="loginform" class="modal" action="user.php" method="post">
+	<div id="loginform" class="modal">
 		<div id="facebook">
 			<i class="fa fa-facebook"></i>
 			<div id="connect">Connect with Facebook</div>
@@ -121,7 +121,7 @@ test header
 		<div id="mainlogin">
 			<div id="or">or</div>
 			<h1>Login to Upload your clothes</h1>
-			<form action="#">
+			<form id="LoginLogin" action="#">
 				<input type="text" id="text" placeholder="your id" value="" required>
 				<input type="password" id="password" placeholder="password" value="" required>
 				<span id="formHide" style="display:none">
@@ -129,7 +129,7 @@ test header
 					<input type="text" id="name" placeholder="name" value="">
 				
 				</span>
-				<button type="submit" onClick="userSubmit();"><i class="fa fa-arrow-right"></i></button>
+				<button type="submit"><i class="fa fa-arrow-right"></i></button>
 			</form>
 			<div id="note">
 				<a href="#">new user?</a>

@@ -1,4 +1,5 @@
 docReady( function() {
+  /* login */
   $('#Loginbutton').click(function(){
  	 $('#loginform').modal({
  	         fadeDuration: 250,
@@ -13,6 +14,9 @@ docReady( function() {
 	 $('#formHide').show();
 	 $('#note').hide();
   });
+  $("#LoginLogin").on('submit', userSubmit);
+  /* user */
+  $("#imgfile").on('change', userUpload);
 });
 
 function loginOpen(){
@@ -21,7 +25,10 @@ function loginOpen(){
   $('#note').show();
 }
 
-function userSubmit(){
+function userSubmit(event){
+	event.stopPropagation();
+	event.preventDefault();
+
 	var id=$("#text").val();
 	var passwd=$("#password").val();
 	var name=null;
@@ -61,4 +68,55 @@ function userSubmit(){
 //		alert("無法更新: "+jqXHR.responseText);
 	});
 }
+
+/* user */
+
+function userUpload(event){
+	alert("change");
+	var files = $("#imgfile").val();
+	if(files.type.match('image.*')) alert("fine");
+	else alert("wrong");
+/*	var request = $.ajax({
+		url: "upload.php",
+		type: "POST",
+		data: {imgfile: files},
+		cache: false,
+	//	dataType: 'json',
+		processData: false,
+		contentType: false,
+//		success: function(data, textStatus, jqXHR)
+//		{
+//		if(typeof data.error === 'undefined')
+//		{
+//		// Success so call function to process the form
+//		submitForm(event, data);
+//		}
+//		else
+//		{
+//		// Handle errors here
+//		console.log('ERRORS: ' + data.error);
+//		}
+//		},
+//error: function(jqXHR, textStatus, errorThrown)
+//	   {
+//		   // Handle errors here
+//		   console.log('ERRORS: ' + textStatus);
+//		   // STOP LOADING SPINNER
+//	   }
+	});
+		
+	request.success(function( result ){
+		if(result.search("error")==-1)
+			location.href=result;
+		else
+			alert(result);
+	});
+		
+	request.fail(function( jqXHR, textStatus){
+		alert("無法更新: "+textStatus);
+//		alert("無法更新: "+jqXHR.responseText);
+	});
+*/
+}
+
 

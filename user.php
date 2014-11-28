@@ -14,10 +14,11 @@
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
+	<script src="js/login.js"></script>
 	<script>
 docReady( function() {
-  $('#Loginbutton').click(function(){
- 	 $('#loginform').modal({
+  $('#Uploadbutton').click(function(){
+ 	 $('#Uploadform').modal({
  	         fadeDuration: 250,
  	   	      fadeDelay: 1.5
  	 });
@@ -58,7 +59,7 @@ test header
 	echo "<h1>Hello ".$row['name']."~</h1>";
 ?>
 		<ul>
-			<li><a id="Loginbutton"  href="#Uploadform" rel="modal:open">Upload</a></li>
+			<li><a id="Uploadbutton"  href="#Uploadform" rel="modal:open">Upload</a></li>
 			<li><a href="#Settingform" rel="modal:open">Setting</a></li>
 			<li><a href="logout.php">Logout</a></li>
 		</ul>
@@ -100,22 +101,14 @@ test header
 	}
 ?>
 	</div>
-	<div id="Settingform" class="modal" action="user.php" method="post">
-		<div id="facebook">
-			<i class="fa fa-facebook"></i>
-			<div id="connect">Connect with Facebook</div>
-		</div>
-		<div id="mainlogin">
-			<div id="or">or</div>
-			<h1>Change name~</h1>
-			<form action="#">
-				<button type="submit"><i class="fa fa-arrow-right"></i></button>
-			</form>
-<!--			<div id="note">
-				<a href="#">Forgot your password?</a>
-			</div>
--->
-		</div>
+	<div id="Uploadform" class="modal">
+	<form class="contact_form" action="#" method="post" name="contact_form">
+		<h2>Upload Cloth</h2>
+		<input type="file" id="imgfile" name="imgfile" />
+		<input type="text"  placeholder="keywords-up" required />
+		<input type="text" name="email" placeholder="keywords" required />
+		<button class="submit" type="submit">Submit Form</button>
+	</form>
 	</div>
 </body>
 
