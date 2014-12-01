@@ -31,11 +31,18 @@ jQuery(window).load(function(){
 </head>
 
 
-<div style="width:100%;">
-test header
-</div>
 
 <body>
+<div id="header" style="width:100%">
+	<div id="LOGO" style="width:15%; display: inline;">
+	 <img src="pics/LOGO DESIGN.png" height="327" width="293"  >
+	</div>
+	
+	<div style=" display: inline;width:60%; color:#57869A;font-size: 250%;text-align:center;line-height:100px;" >
+		宅宅的平價時尚
+	
+	</div>
+</div>
 	<div id="left">
 		<ul>
 			<li><a id="Loginbutton"  href="#loginform" rel="modal:open" onClick="loginOpen();">Login</a></li>
