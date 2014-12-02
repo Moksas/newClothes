@@ -16,7 +16,7 @@
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
 	<script src="js/login.js"></script>
- <script src="js/search.js"></script>
+	 <script src="js/search.js"></script>
 
 	<script>
 jQuery(window).load(function(){
@@ -37,14 +37,10 @@ jQuery(window).load(function(){
 
 
 <body>
-<div id="header" style="width:100%; height:327px">
-	 <img src="pics/LOGO DESIGN.png" height="327" width="293"style=" display: inline;"  >
-	
-	
-	<div id="Logo" style="font-size:64px; color:#57869A;position:absolute;left:38%; top:20% " >
-		宅 宅 的 平 價 時 尚
-	
-	</div>
+<div id="header" style="width:100%; height:220px;vertical-align:middle">
+	 <a href="./">
+	 <img src="header.png" style="vertical-align:middle;height:100%;"/>
+	</a>
 </div>
 	<div id="left">
 		<ul>

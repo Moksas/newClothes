@@ -9,12 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="css/tag.css"/>
 	<link rel="stylesheet" type="text/css" href="css/login.css"/>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="css/search.css"/>
 	<link rel="stylesheet" type="text/css" href="css/jquery.modal.css" media="screen"/>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
 	<script src="js/login.js"></script>
+	 <script src="js/search.js"></script>
+
 	<script>
 docReady( function() {
   $('#Uploadbutton').click(function(){
@@ -37,14 +40,19 @@ jQuery(window).load(function(){
   });
 });
 	</script>
+
 </head>
 
 
-<div style="width:100%;">
-test header
-</div>
 
 <body>
+<div id="header" style="width:100%; height:220px;vertical-align:middle">
+	 <a href="./">
+	 <img src="header.png" style="vertical-align:middle;height:100%;"/>
+	</a>
+</div>
+</head>
+
 	<div id="left">
 <?php
 	session_start();
