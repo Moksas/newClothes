@@ -38,7 +38,9 @@ input:-moz-placeholder {
 }
 
 .search-input {
-    width: 196px;
+	vertical-align: middle;
+	display: initial;
+    width: 140px;
     height: 45px;
     padding: 6px 10px 6px 35px;
     font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -59,6 +61,8 @@ input:-moz-placeholder {
 }
 
 .search-btn {
+	vertical-align: middle;
+	display: initial;
     margin-left: 3px;
     width: 45px;
     height: 45px;

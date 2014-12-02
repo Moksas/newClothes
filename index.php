@@ -65,9 +65,9 @@ jQuery(window).load(function(){
                               <a href="./index.php?key=皮鞋">皮鞋</a><br/>
 			</div>
 		</ul>
-	      <form  >
-		           <input type="text" name="key" class="search-input" placeholder="Search..." />
-		                  <input class="search-btn" type="submit" value="Go" />
+	      <form  style="margin: 0 10px;">
+		       <input type="text" name="key" class="search-input" placeholder="Search..." />
+		       <input class="search-btn" type="submit" value="Go" />
 		   </form>
 
 	</div>
