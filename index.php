@@ -9,12 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="css/tag.css"/>
 	<link rel="stylesheet" type="text/css" href="css/login.css"/>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+	<link rel="stylesheet" type="text/css" href="css/search.css"/>
 	<link rel="stylesheet" type="text/css" href="css/jquery.modal.css" media="screen"/>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
 	<script src="js/login.js"></script>
+ <script src="js/search.js"></script>
+
 	<script>
 jQuery(window).load(function(){
 	$(".item").each(function(){
@@ -28,18 +31,18 @@ jQuery(window).load(function(){
   });
 });
 	</script>
+
 </head>
 
 
 
 <body>
-<div id="header" style="width:100%">
-	<div id="LOGO" style="width:15%; display: inline;">
-	 <img src="pics/LOGO DESIGN.png" height="327" width="293"  >
-	</div>
+<div id="header" style="width:100%; height:327px">
+	 <img src="pics/LOGO DESIGN.png" height="327" width="293"style=" display: inline;"  >
 	
-	<div style=" display: inline;width:60%; color:#57869A;font-size: 250%;text-align:center;line-height:100px;" >
-		宅宅的平價時尚
+	
+	<div id="Logo" style="font-size:64px; color:#57869A;position:absolute;left:38%; top:20% " >
+		宅 宅 的 平 價 時 尚
 	
 	</div>
 </div>
@@ -66,7 +69,13 @@ jQuery(window).load(function(){
                               <a href="./index.php?key=皮鞋">皮鞋</a><br/>
 			</div>
 		</ul>
+	      <form  >
+		           <input type="text" name="key" class="search-input" placeholder="Search..." />
+		                  <input class="search-btn" type="submit" value="Go" />
+		   </form>
+
 	</div>
+
 	<div id="container">
 <?php
 	session_start();
