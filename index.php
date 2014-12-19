@@ -16,7 +16,6 @@
 	<script src="js/jquery.modal.min.js"></script>
 	<script src="js/foldtoggle.js"></script>
 	<script src="js/login.js"></script>
-	 <script src="js/search.js"></script>
 
 	<script>
 jQuery(window).load(function(){
@@ -80,7 +79,7 @@ jQuery(window).load(function(){
 		return;
 	}
 	require_once("db_const.php");
-	$keyWord = htmlspecialchars($_GET['key']);
+	$keyWord = htmlspecialchars($_GET['key'],ENT_QUOTES);
 	$location = $_GET['loc'];
 	$sql="SELECT `pictures`.*, `user`.name FROM `pictures`,`user` where `pictures`.userid=`user`.id ";
 	if(!$keyWord) ;
