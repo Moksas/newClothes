@@ -1,10 +1,10 @@
 <?php
 	require_once("db_const.php");
 	session_start();
-	$name=htmlspecialchars($_POST['name']);
+	$name=htmlspecialchars($_POST['name'], ENT_QUOTES);
 	$passwd=htmlspecialchars($_POST['passwd']);
 	$passwd2=htmlspecialchars($_POST['passwd2']);
-	$id=htmlspecialchars($_POST['id']);
+	$id=htmlspecialchars($_POST['id'], ENT_QUOTES);
 	/* login */
 	if( ($passwd2=="null" && $name=="null") 
 		|| ($passwd2==null && $name==null) ){  
