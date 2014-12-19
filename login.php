@@ -21,6 +21,11 @@
 		}
 		return;
 	}
+	/* check user */
+	$sql = "select * from `user` where `userid`='".$id."'";
+	$result=$mysqli->query($sql);
+	$row=$result->fetch_array();
+	if($row){ echo "使用者已存在"; return;}
 	/* register */
 	if($passwd!=$passwd2){ echo "密碼不同"; return;}
 	$sql = "INSERT INTO `user`(`userid`, `name`, `passwd`) VALUES ('".$id."','".$name."','".md5($passwd."ClotheS")."')";
